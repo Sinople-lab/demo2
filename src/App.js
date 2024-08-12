@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import Menu from './components/Menu';
+import Info from './components/Info';
+import Logo from './components/Logo';
+
+import './W3style.css';
 import './App.css';
+import background from './images/background.jpg'
 
 function App() {
+
+  const myStyle = {
+    backgroundImage:`url(${background})`,
+    height: "100vh",
+    //marginTop: "-70px",
+    //fontSize: "50px",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={myStyle} className='w3-display-container'>
+        <Logo />
+        <Menu />
+        <Info />
     </div>
   );
 }
