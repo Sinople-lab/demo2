@@ -1,11 +1,11 @@
-import React from 'react'
+import { Link, Outlet } from 'react-router-dom';
 import './../W3style.css'
 
 const Menu = () => {
   return (
     <div className='w3-display-topleft w3-container w3-xlarge'>
-        <p><button class="w3-button w3-black">Servicios</button></p>
-        <p><button class="w3-button w3-black">Contacto</button></p>
+        <p><Link to={"/servicios"}  class="w3-button w3-black">Servicios</Link></p>
+        <p><Link to={"/contacto"} class="w3-button w3-black">Contacto</Link></p>
     </div>
   )
 }

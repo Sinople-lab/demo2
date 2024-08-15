@@ -1,10 +1,31 @@
-import Menu from './components/Menu';
-import Info from './components/Info';
-import Logo from './components/Logo';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import Home from './pages/Home';
+import { NotFound } from './pages/NotFound';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
 
 import './W3style.css';
 import './App.css';
 import background from './images/background.jpg'
+//import Contact from './pages/Contact';
+
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element:<Home />,
+    errorElement: <NotFound />
+  },
+  {
+    path:'/servicios',
+    element:<Services />,
+  },
+  {
+    path:'contacto',
+    element: <Contact />
+  },
+
+])
 
 function App() {
 
@@ -19,9 +40,7 @@ function App() {
 
   return (
     <div style={myStyle} className='w3-display-container'>
-        <Logo />
-        <Menu />
-        <Info />
+        <RouterProvider router={router} />
     </div>
   );
 }

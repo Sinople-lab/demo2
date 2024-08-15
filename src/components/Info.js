@@ -1,5 +1,4 @@
 import './../W3style.css'
-import './../index.css'
 
 const Info = () => {
   return (
